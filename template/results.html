@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sample.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/pic8.jpg') }}");
+            background-color: #333; /* Optional: Dark background for contrast */
+            color: black; /* Set default text color to black */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: left; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            padding: 50px;
+        }
+        .container {
+            width: 400px; /* Set a specific width for the container */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px; /* Optional: Rounded corners */
+            padding: 40px; /* Add padding to create space around the content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+            text-align: center; /* Center text inside the container */
+        }
+        table {
+            width: 100%; /* Set table width to 100% of the container */
+            border-collapse: collapse; /* Collapse borders */
+            margin: 20px 0; /* Add vertical margin */
+        }
+        th, td {
+            border: 1px solid black; /* Black border for table */
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: white; /* Darker background for headers */
+        }
+        .button-container {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center the button */
+            margin-top: 20px; /* Space above the button */
+        }
+        button {
+            padding: 5px 10px; /* Decrease padding for a smaller button */
+            background-color: #011e5c; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 14px; /* Decrease font size */
+        }
+        button:hover {
+            background-color: #00e9e9; /* Darker shade on hover */
+        }
+        a {
+            color: black; /* Black color for the link */
+            text-decoration: none; /* Remove underline from link */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><u>Detection Results</u></h1>
+        <table>
+            <tr>
+                <th>Tumor Type</th>
+                <th>Confidence Level</th>
+            </tr>
+            <tr>
+                <td><b>{{ out.label }}</b></td>
+                <td><b>{{ out.confidence }}</b></td>
+            </tr>
+        </table>
+        <br>
+        <div class="button-container">
+            <a href="/"><button>Go Back</button></a> <!-- Black color for the link -->
+        </div>
+    </div>
+</body>
+</html>

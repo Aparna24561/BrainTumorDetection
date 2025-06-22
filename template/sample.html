@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sample.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/pic1.jpg') }}");
+            background-size: cover; /* Cover the entire background */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Use flexbox to center the content */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            margin: 0; /* Remove default margin */
+        }
+        .header {
+            text-align: center; /* Center the text */
+            color: white; /* Text color */
+            margin-bottom: 0px; /* Space between header and container */
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            border-radius: 10px; /* Optional: Rounded corners */
+            padding: 235px 120px 130px 120px; /* Maintain top and bottom padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+            width: 400px; /* Set a specific width for the container */
+            text-align: left;
+            margin-top: 70px; /* Align text to the left */
+        }
+        input[type="file"] {
+            margin: 10px 0; /* Add some margin for spacing */
+            display: block; /* Stack input file above the button */
+            width: calc(100% - 120px); /* Make the file input take full width minus button width */
+            float: left; /* Align input to the left */
+        }
+        .button-container {
+            display: flex; /* Use flexbox for button alignment */
+            justify-content: flex-end; /* Align button to the right */
+            margin-top: 10px; /* Space between file input and button */
+        }
+        input[type="submit"] {
+            padding: 5px 10px; /* Decrease padding for a smaller button */
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 14px; /* Decrease font size */
+        }
+        input[type="submit"]:hover {
+            background-color: rgb(240, 128, 128); /* Darker shade on hover */
+        }
+        .error-message {
+            color: red; /* Error message color */
+            font-weight: bold; /* Make error message bold */
+            margin-top: 20px; /* Space above the error message */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="c1"><u>BRAIN TUMOR DETECTION</u></h1>
+        <h3 class="c2"><b><u>USING CNN</u></b></h3>
+    </div>
+    <div class="container">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <p id="i1" style="margin: 0;"><b><u>Upload Your File Here</u></b></p>
+            <div style="display: flex; align-items: center;">
+                <input type="file" name="f1" required>
+                <div class="button-container">
+                    <input type="submit" value="Detect Tumor">
+                </div>
+            </div>
+            {% if error %}
+                <p class="error-message">{{ error }}</p> <!-- Display error message if it exists -->
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
