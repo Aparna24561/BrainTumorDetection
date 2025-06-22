@@ -21,19 +21,8 @@ Flask - web server and routing
 
 HTML/CSS - user interface
 
-## 📁 Project Structure
-├── app1.py / train.py         # Flask web app for image upload & prediction
-├── brain_tumor_det.py         # Full model training script
-├── brain_tumor_classifier_model.h5  # Trained model file
-├── templates/
-│   ├── sample.html            # Upload page
-│   └── results.html           # Output display page
-├── static
-    |-css
-      |-style.css
 
-└── README.md
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 Clone the repository or download the ZIP.
 
 ## Install required packages:
