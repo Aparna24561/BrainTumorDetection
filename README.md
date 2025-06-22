@@ -1,6 +1,8 @@
 🧠 Brain Tumor Detection using CNN and Flask
 This project is a deep learning-based web application that detects brain tumors from MRI images using Convolutional Neural Networks (CNNs). It classifies images into one of four categories: glioma tumor, meningioma tumor, pituitary tumor, or no tumor. A Flask web interface allows users to upload MRI scans and receive predictions instantly.
 
+Dataset:https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri
+
 ## 📌 Features
 Built a CNN model using TensorFlow and Keras to classify MRI images.
 
